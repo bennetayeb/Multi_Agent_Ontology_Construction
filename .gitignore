@@ -1,0 +1,32 @@
+# environments
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[codz]
+*.egg-info/
+.venv/
+venv/
+*.pyc
+
+# runs
+ontology_versions/
+embedding_cache/
+checkpoints/
+scripts/
+.last_run_id
+
+#
+*.sqlite
+*.db
+
+# IDE
+.idea/
+.vscode/
+tempCodeRunnerFile.py
+
+# OS
+.DS_Store
+Thumbs.db

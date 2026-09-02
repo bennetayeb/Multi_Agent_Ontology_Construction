@@ -1,0 +1,52 @@
+{
+    "triplets": [
+      {
+        "id": "9f32a1c7",
+        "subject": "piece of turkey back (with skin)",
+        "predicate": "is-a",
+        "object": "piece of animal back (with skin)"
+      },
+      {
+        "id": "b74e2d90",
+        "subject": "piece of chicken back (with skin)",
+        "predicate": "is-a",
+        "object": "piece of animal back (with skin)"
+      },
+      {
+        "id": "3ac89f12",
+        "subject": "piece of animal back (with skin, raw)",
+        "predicate": "is-a",
+        "object": "piece of animal back (with skin)"
+      },
+      {
+        "id": "e51b7a64",
+        "subject": "polysaccharide",
+        "predicate": "is-a",
+        "object": "glycan"
+      },
+      {
+        "id": "6d08c3f1",
+        "subject": "oligosaccharide",
+        "predicate": "is-a",
+        "object": "glycan"
+      },
+      {
+        "id": "a92f4e37",
+        "subject": "polysaccharide derivative",
+        "predicate": "is-a",
+        "object": "glycan"
+      },
+      {
+        "id": "4c7db825",
+        "subject": "kingklip",
+        "predicate": "is-a",
+        "object": "cusk-eel family"
+      },
+      {
+        "id": "f18a6b43",
+        "subject": "cusk-eel family",
+        "predicate": "is-a",
+        "object": "gadiform fish"
+      }
+    ]
+  }

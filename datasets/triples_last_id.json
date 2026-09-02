@@ -1,0 +1,700 @@
+{
+  "triplets": [
+    {
+      "id": "7ccdc9ef",
+      "subject": "règlement",
+      "predicate": "composé_de",
+      "object": "règlement_littéral"
+    },
+    {
+      "id": "936c547f",
+      "subject": "règlement",
+      "predicate": "composé_de",
+      "object": "règlement_graphique"
+    },
+    {
+      "id": "670a9e91",
+      "subject": "règlement_littéral",
+      "predicate": "complète",
+      "object": "règlement_graphique"
+    },
+    {
+      "id": "788780f2",
+      "subject": "Règlement graphique",
+      "predicate": "fixe",
+      "object": "règle"
+    },
+    {
+      "id": "aea6d947",
+      "subject": "règle",
+      "predicate": "applicable_sur",
+      "object": "plan thématique"
+    },
+    {
+      "id": "c867b6c5",
+      "subject": "zone",
+      "predicate": "localisée_sur",
+      "object": "règlement_graphique"
+    },
+    {
+      "id": "b4f03c48",
+      "subject": "règlement_littéral",
+      "predicate": "comprend",
+      "object": "définition_terme"
+    },
+    {
+      "id": "8c900dab",
+      "subject": "définition_terme",
+      "predicate": "issue_du",
+      "object": "contexte_local"
+    },
+    {
+      "id": "db407f64",
+      "subject": "lexique_national",
+      "predicate": "adapté_au",
+      "object": "contexte_local"
+    },
+    {
+      "id": "91cb6003",
+      "subject": "règlement_littéral",
+      "predicate": "comprend",
+      "object": "modalité_application"
+    },
+    {
+      "id": "6d3de074",
+      "subject": "règlement_littéral",
+      "predicate": "comprend",
+      "object": "disposition_graphique"
+    },
+    {
+      "id": "9bf8d90f",
+      "subject": "disposition_graphique",
+      "predicate": "applicable_sur",
+      "object": "parcelle"
+    },
+    {
+      "id": "74c69330",
+      "subject": "règlement_littéral",
+      "predicate": "comprend",
+      "object": "disposition_applicable"
+    },
+    {
+      "id": "a0d381f3",
+      "subject": "disposition_applicable",
+      "predicate": "applicable_à",
+      "object": "zone"
+    },
+    {
+      "id": "e00757b9",
+      "subject": "disposition_applicable",
+      "predicate": "applicable_à",
+      "object": "zone_urbaine"
+    },
+    {
+      "id": "f968a9a8",
+      "subject": "zone_urbaine",
+      "predicate": "complétée_par",
+      "object": "disposition_spécifique"
+    },
+    {
+      "id": "244e1694",
+      "subject": "règlement_littéral",
+      "predicate": "comprend",
+      "object": "disposition_littérale"
+    },
+    {
+      "id": "6c9d84ef",
+      "subject": "disposition_littérale",
+      "predicate": "applicable_à",
+      "object": "zone"
+    },
+    {
+      "id": "f37007eb",
+      "subject": "zone",
+      "predicate": "à_type",
+      "object": "zone_spécifique"
+    },
+    {
+      "id": "8b3bcc90",
+      "subject": "règlement_graphique",
+      "predicate": "composé_de",
+      "object": "plans_zonage"
+    },
+    {
+      "id": "411e1d20",
+      "subject": "règlement_graphique",
+      "predicate": "composé_de",
+      "object": "plans_détail"
+    },
+    {
+      "id": "4c6379fa",
+      "subject": "règlement_graphique",
+      "predicate": "composé_de",
+      "object": "plans_masse"
+    },
+    {
+      "id": "ecf95802",
+      "subject": "règlement_graphique",
+      "predicate": "composé_de",
+      "object": "plans_épannelage"
+    },
+    {
+      "id": "79ac076b",
+      "subject": "plans_zonage",
+      "predicate": "à_échelle",
+      "object": "différente"
+    },
+    {
+      "id": "8969e493",
+      "subject": "zone",
+      "predicate": "à_type",
+      "object": "zone_agricole"
+    },
+    {
+      "id": "64de55ad",
+      "subject": "zone_agricole",
+      "predicate": "à_type",
+      "object": "zone_a"
+    },
+    {
+      "id": "bce2cd51",
+      "subject": "zone_a",
+      "predicate": "comprend",
+      "object": "secteur_constructible"
+    },
+    {
+      "id": "4798da23",
+      "subject": "secteur_constructible",
+      "predicate": "possède",
+      "object": "capacité_accueil_limitée"
+    },
+    {
+      "id": "bed86f24",
+      "subject": "zone_urbaine",
+      "predicate": "intitulée",
+      "object": "zone_u"
+    },
+    {
+      "id": "fda348f2",
+      "subject": "zone_u",
+      "predicate": "est_un",
+      "object": "secteur_urbanisé"
+    },
+    {
+      "id": "bda1fb05",
+      "subject": "zone_u",
+      "predicate": "est_un",
+      "object": "secteur_équipé"
+    },
+    {
+      "id": "73413e51",
+      "subject": "zone_urbaine_mixte",
+      "predicate": "a_vocation_principale",
+      "object": "habitat"
+    },
+    {
+      "id": "3d8ec905",
+      "subject": "zone_urbaine_mixte",
+      "predicate": "a_vocation_principale",
+      "object": "activité_compatible"
+    },
+    {
+      "id": "84628f9b",
+      "subject": "activité_compatible",
+      "predicate": "compatible_avec",
+      "object": "habitat"
+    },
+    {
+      "id": "2a54561c",
+      "subject": "zone_urbaine_mixte",
+      "predicate": "comprend",
+      "object": "zone_ua"
+    },
+    {
+      "id": "152f4d44",
+      "subject": "zone_urbaine_mixte",
+      "predicate": "comprend",
+      "object": "zone_ub"
+    },
+    {
+      "id": "c66dff6b",
+      "subject": "zone_urbaine_mixte",
+      "predicate": "comprend",
+      "object": "zone_uc"
+    },
+    {
+      "id": "f684f789",
+      "subject": "zone_urbaine_mixte",
+      "predicate": "comprend",
+      "object": "zone_ud"
+    },
+    {
+      "id": "0f463762",
+      "subject": "zone_urbaine_mixte",
+      "predicate": "comprend",
+      "object": "zone_ue"
+    },
+    {
+      "id": "0c458a7f",
+      "subject": "zone_urbaine_mixte",
+      "predicate": "comprend",
+      "object": "zone_uo"
+    },
+    {
+      "id": "50f76a79",
+      "subject": "zone_urbaine_mixte",
+      "predicate": "comprend",
+      "object": "zone_up"
+    },
+    {
+      "id": "5cfd7f36",
+      "subject": "zone_ua",
+      "predicate": "est_un",
+      "object": "zone_centre_ville"
+    },
+    {
+      "id": "439f71f1",
+      "subject": "zone_ua",
+      "predicate": "est_un",
+      "object": "zone_centre_bourg"
+    },
+    {
+      "id": "5ef47507",
+      "subject": "zone_ua",
+      "predicate": "possède",
+      "object": "extension"
+    },
+    {
+      "id": "6b7169a1",
+      "subject": "zone_ua",
+      "predicate": "comprend",
+      "object": "collectif_dense"
+    },
+    {
+      "id": "fb3d03a8",
+      "subject": "zone_ua",
+      "predicate": "comprend",
+      "object": "individuel_dense"
+    },
+    {
+      "id": "ecf03241",
+      "subject": "zone_ua",
+      "predicate": "comprend",
+      "object": "commerce"
+    },
+    {
+      "id": "86d06999",
+      "subject": "zone_ua",
+      "predicate": "comprend",
+      "object": "bureau"
+    },
+    {
+      "id": "cff06170",
+      "subject": "zone_ua",
+      "predicate": "comprend",
+      "object": "service"
+    },
+    {
+      "id": "6d1e51c7",
+      "subject": "zone_ub",
+      "predicate": "est_un",
+      "object": "zone_voie_faubourg"
+    },
+    {
+      "id": "17c31e70",
+      "subject": "zone_ub",
+      "predicate": "correspond_à",
+      "object": "voie_historique_extension_de_centre"
+    },
+    {
+      "id": "f645adfb",
+      "subject": "zone_ub",
+      "predicate": "correspond_à",
+      "object": "lieu_entrée_ville"
+    },
+    {
+      "id": "0a73486b",
+      "subject": "zone_ub",
+      "predicate": "comprend",
+      "object": "collectif_dense"
+    },
+    {
+      "id": "82b3e63e",
+      "subject": "zone_ub",
+      "predicate": "comprend",
+      "object": "individuel_dense"
+    },
+    {
+      "id": "9cc893e3",
+      "subject": "zone_ub",
+      "predicate": "comprend",
+      "object": "commerce"
+    },
+    {
+      "id": "4b6db4e8",
+      "subject": "zone_ub",
+      "predicate": "comprend",
+      "object": "bureau"
+    },
+    {
+      "id": "ccb8b760",
+      "subject": "zone_ub",
+      "predicate": "comprend",
+      "object": "service"
+    },
+    {
+      "id": "62efba85",
+      "subject": "zone_uc",
+      "predicate": "est_un",
+      "object": "zone_ensemble_collectif"
+    },
+    {
+      "id": "3699a81f",
+      "subject": "zone_uc",
+      "predicate": "implanté_dans",
+      "object": "plan_composition_ensemble"
+    },
+    {
+      "id": "4f83597c",
+      "subject": "zone_ud",
+      "predicate": "est_un",
+      "object": "zone_extension_centre_ville"
+    },
+    {
+      "id": "aa3293a2",
+      "subject": "zone_ud",
+      "predicate": "est_un",
+      "object": "zone_extension_centre_bourg"
+    },
+    {
+      "id": "e427568b",
+      "subject": "zone_ud",
+      "predicate": "est_un",
+      "object": "zone_extension_urbaine"
+    },
+    {
+      "id": "8e71438e",
+      "subject": "zone_ud",
+      "predicate": "comprend",
+      "object": "immeuble_collectif"
+    },
+    {
+      "id": "5a9e1e00",
+      "subject": "zone_ud",
+      "predicate": "comprend",
+      "object": "individuel_dense"
+    },
+    {
+      "id": "4a6e9f78",
+      "subject": "zone_ud",
+      "predicate": "structure",
+      "object": "espace_public"
+    },
+    {
+      "id": "9d2d5118",
+      "subject": "zone_ue",
+      "predicate": "est_un",
+      "object": "zone_urbaine_résidentielle"
+    },
+    {
+      "id": "511f8947",
+      "subject": "zone_ue",
+      "predicate": "comprend",
+      "object": "habitat_pavillonnaire"
+    },
+    {
+      "id": "e44009bb",
+      "subject": "zone_ue",
+      "predicate": "comprend",
+      "object": "maison_ville"
+    },
+    {
+      "id": "2ff27b95",
+      "subject": "zone_ue",
+      "predicate": "comprend",
+      "object": "maison_groupée"
+    },
+    {
+      "id": "a76df341",
+      "subject": "zone_ue",
+      "predicate": "comprend",
+      "object": "maison_isolée"
+    },
+    {
+      "id": "7c486804",
+      "subject": "zone_uo",
+      "predicate": "est_un",
+      "object": "zone_opérationnelle"
+    },
+    {
+      "id": "8766d255",
+      "subject": "zone_uo",
+      "predicate": "aménagé_par",
+      "object": "opération_aménagement_ensemble"
+    },
+    {
+      "id": "934fcca7",
+      "subject": "zone_uo",
+      "predicate": "aménagé_par",
+      "object": "opération_aménagement_multiple"
+    },
+    {
+      "id": "b9ded7cb",
+      "subject": "zone_up",
+      "predicate": "est_un",
+      "object": "zone_composition_urbaine_homogène"
+    },
+    {
+      "id": "7fea3502",
+      "subject": "zone_up",
+      "predicate": "possède",
+      "object": "enjeu_patrimonial"
+    },
+    {
+      "id": "a323a394",
+      "subject": "zone_ug",
+      "predicate": "a_vocation_principale",
+      "object": "équipement_intérêt_collectif"
+    },
+    {
+      "id": "d76a5ebb",
+      "subject": "zone_ug",
+      "predicate": "a_vocation_principale",
+      "object": "service_public"
+    },
+    {
+      "id": "496c2750",
+      "subject": "zone_ug_spécifique",
+      "predicate": "permet_accueil",
+      "object": "sous_destination"
+    },
+    {
+      "id": "29ef1c8f",
+      "subject": "zone_ui",
+      "predicate": "est_un",
+      "object": "zone_activité"
+    },
+    {
+      "id": "46dcb469",
+      "subject": "zone_ui",
+      "predicate": "comprend",
+      "object": "zone_ui1"
+    },
+    {
+      "id": "702f2ed9",
+      "subject": "zone_ui",
+      "predicate": "comprend",
+      "object": "zone_ui2"
+    },
+    {
+      "id": "08bb557d",
+      "subject": "zone_ui",
+      "predicate": "comprend",
+      "object": "zone_ui3"
+    },
+    {
+      "id": "9e580d85",
+      "subject": "zone_ui",
+      "predicate": "comprend",
+      "object": "zone_ui4"
+    },
+    {
+      "id": "fab459e0",
+      "subject": "zone_ui",
+      "predicate": "comprend",
+      "object": "zone_ui5"
+    },
+    {
+      "id": "da686a38",
+      "subject": "zone_ui1",
+      "predicate": "destinée_à",
+      "object": "parc_activité_industrielle"
+    },
+    {
+      "id": "398f26c5",
+      "subject": "zone_ui2",
+      "predicate": "destinée_à",
+      "object": "artisanat"
+    },
+    {
+      "id": "6b2a92c5",
+      "subject": "zone_ui2",
+      "predicate": "destinée_à",
+      "object": "commerce_détail"
+    },
+    {
+      "id": "7c9a4fb8",
+      "subject": "zone_ui3",
+      "predicate": "destinée_à",
+      "object": "parc_activité_bureau"
+    },
+    {
+      "id": "bc4a40cb",
+      "subject": "zone_ui4",
+      "predicate": "destinée_à",
+      "object": "parc_exposition"
+    },
+    {
+      "id": "3b50bfbd",
+      "subject": "zone_ui5",
+      "predicate": "destinée_à",
+      "object": "zone_activité_à_restructurer"
+    },
+    {
+      "id": "3aacfff0",
+      "subject": "catégorie_zone_urbaine",
+      "predicate": "divisée_en",
+      "object": "zone_numérotée"
+    },
+    {
+      "id": "2a2ed913",
+      "subject": "zone_au",
+      "predicate": "est_un",
+      "object": "zone_urbanisation"
+    },
+    {
+      "id": "8fd89c90",
+      "subject": "zone_au",
+      "predicate": "destinée_à",
+      "object": "ouverture_urbanisation"
+    },
+    {
+      "id": "5cac2856",
+      "subject": "zone_au",
+      "predicate": "couvre",
+      "object": "site"
+    },
+    {
+      "id": "b6ef604c",
+      "subject": "site",
+      "predicate": "a_vocation_à",
+      "object": "accueil_nouveau_quartier"
+    },
+    {
+      "id": "aaf4cb11",
+      "subject": "nouveau_quartier",
+      "predicate": "développé_dans",
+      "object": "opération_aménagement_ensemble"
+    },
+    {
+      "id": "d700af2a",
+      "subject": "zone_au",
+      "predicate": "à_type",
+      "object": "zone_1au"
+    },
+    {
+      "id": "2f164e17",
+      "subject": "zone_au",
+      "predicate": "à_type",
+      "object": "zone_2au"
+    },
+    {
+      "id": "143a3bed",
+      "subject": "zone_1au",
+      "predicate": "ouverte_à",
+      "object": "urbanisation"
+    },
+    {
+      "id": "a7b82d2a",
+      "subject": "zone_1au",
+      "predicate": "soumise_à",
+      "object": "condition_cumulée"
+    },
+    {
+      "id": "4c4a74ba",
+      "subject": "construction",
+      "predicate": "autorisée_lors_de",
+      "object": "opération_aménagement_ensemble"
+    },
+    {
+      "id": "84d33d0a",
+      "subject": "construction",
+      "predicate": "autorisée_au_fur_et_à_mesure_de",
+      "object": "réalisation_équipement_interne"
+    },
+    {
+      "id": "e48e3f16",
+      "subject": "secteur_nh",
+      "predicate": "est_un",
+      "object": "secteur_stecal"
+    },
+    {
+      "id": "61146cbc",
+      "subject": "secteur_ni",
+      "predicate": "est_un",
+      "object": "secteur_stecal"
+    },
+    {
+      "id": "c58e7bcc",
+      "subject": "secteur_nl",
+      "predicate": "est_un",
+      "object": "secteur_stecal"
+    },
+    {
+      "id": "56a6b636",
+      "subject": "secteur_ng",
+      "predicate": "est_un",
+      "object": "secteur_stecal"
+    },
+    {
+      "id": "6dd3fdc4",
+      "subject": "secteur_ness",
+      "predicate": "est_un",
+      "object": "secteur_stecal"
+    },
+    {
+      "id": "32c15692",
+      "subject": "secteur_ny",
+      "predicate": "est_un",
+      "object": "secteur_stecal"
+    },
+    {
+      "id": "c992b6b2",
+      "subject": "secteur_na",
+      "predicate": "destiné_à",
+      "object": "diversification_agriculture"
+    },
+    {
+      "id": "2fa9c841",
+      "subject": "secteur_nh",
+      "predicate": "destiné_à",
+      "object": "hameau_habitat_existant"
+    },
+    {
+      "id": "8b92a805",
+      "subject": "secteur_ni",
+      "predicate": "destiné_à",
+      "object": "extension_construction_non_agricole"
+    },
+    {
+      "id": "f03b2708",
+      "subject": "secteur_nl",
+      "predicate": "destiné_à",
+      "object": "construction_activité_service"
+    },
+    {
+      "id": "780661c5",
+      "subject": "secteur_nl",
+      "predicate": "destiné_à",
+      "object": "construction_hébergement_loisirs"
+    },
+    {
+      "id": "a7c9a2e5",
+      "subject": "secteur_nl",
+      "predicate": "destiné_à",
+      "object": "construction_hébergement_tourisme"
+    },
+    {
+      "id": "bd3add85",
+      "subject": "secteur_ng",
+      "predicate": "destiné_à",
+      "object": "aire_accueil_gens_voyage"
+    },
+    {
+      "id": "a3edeb33",
+      "subject": "secteur_ness",
+      "predicate": "destiné_à",
+      "object": "économie_sociale_solidaire"
+    }
+  ]
+}

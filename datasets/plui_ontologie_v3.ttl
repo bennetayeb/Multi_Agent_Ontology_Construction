@@ -1,0 +1,1165 @@
+@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix PLU: <http://example.org/plui1#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://www.semanticweb.org/owl/owlapi/turtle#> .
+
+<http://example.org/plui1> rdf:type owl:Ontology ;
+                            dct:created "2025-12-16"^^xsd:date ;
+                            dct:language "fr" ;
+                            dct:modified "2025-12-16"^^xsd:date ;
+                            rdfs:comment """Ontologie structurée du Plan Local d'Urbanisme intercommunal (PLUi). Permet de vérifier la conformité d'un permis de construire par rapport au 
+                    règlement de zones."""@fr ;
+                            rdfs:label "Ontologie du PLUi"@fr ;
+                            owl:versionInfo "2.0" .
+
+
+dct:created rdf:type owl:AnnotationProperty .
+
+dct:language rdf:type owl:AnnotationProperty .
+
+dct:modified rdf:type owl:AnnotationProperty .
+
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+xsd:date rdf:type rdfs:Datatype .
+
+PLU:aStatutDeConformite rdf:type owl:ObjectProperty ;
+                       owl:inverseOf PLU:estStatutDe ;
+                       rdfs:domain PLU:PermisDeConstruire ;
+                       rdfs:range PLU:StatutConformite ;
+                       rdfs:label "a un statut de conformité"@fr .
+
+PLU:destineeA rdf:type owl:ObjectProperty ;
+             rdfs:domain PLU:Zone ;
+             rdfs:range PLU:Destination ;
+             rdfs:comment "Relie une zone à ses destinations autorisées par le règlement du PLUi."@fr ;
+             rdfs:label "destinée à"@fr .
+
+PLU:destinéeh rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf PLU:destineeA ;
+             rdfs:domain PLU:Aa ;
+             rdfs:range PLU:Hebergement .
+
+
+PLU:estStatutDe rdf:type owl:ObjectProperty ;
+               rdfs:domain PLU:StatutConformite ;
+               rdfs:range PLU:PermisDeConstruire ;
+               rdfs:label "est le statut de"@fr .
+
+PLU:pourdestinations rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain PLU:PermisDeConstruire ;
+                    rdfs:range PLU:Destination .
+
+PLU:pourlieux rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain PLU:PermisDeConstruire ;
+             rdfs:range PLU:Zone .
+
+PLU:AU1 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:ZoneUrbanisation ;
+       owl:disjointWith PLU:AU2 ;
+       rdfs:label "1AU"@fr ;
+       skos:altLabel "secteur 1au"@fr ,
+                     "zone 1au"@fr .
+
+PLU:AU2 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:ZoneUrbanisation ;
+       rdfs:label "2AU"@fr ;
+       skos:altLabel "secteur 2au"@fr ,
+                     "zone 2au"@fr .
+
+
+PLU:Aa rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneAgricole ,
+                      PLU:ZonesHebergementExclusif ;
+      rdfs:label "Aa"@fr ;
+      skos:altLabel "secteur aa"@fr ,
+                    "zone aa"@fr .
+
+PLU:ActiviteDeServiceAvecAccueilClientele rdf:type owl:Class ;
+                                         rdfs:subClassOf PLU:CommerceEtActiviteDeService ;
+                                         rdfs:label "Activités de service avec accueil d'une clientèle"@fr .
+
+
+PLU:Aen rdf:type owl:Class ;
+       rdfs:subClassOf PLU:ZoneAgricole ;
+       rdfs:label "Aen"@fr ;
+       skos:altLabel "secteur aen"@fr ,
+                     "zone aen"@fr .
+
+
+PLU:Ag rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneAgricole ;
+      rdfs:label "Ag"@fr ;
+      skos:altLabel "secteur ag"@fr ,
+                    "zone ag"@fr .
+
+
+PLU:Ah rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneAgricole ;
+      rdfs:label "Ah"@fr ;
+      skos:altLabel "secteur ah"@fr ,
+                    "zone ah"@fr .
+
+
+PLU:Ai rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneAgricole ;
+      rdfs:label "Ai"@fr ;
+      skos:altLabel "secteur ai"@fr ,
+                    "zone ai"@fr .
+
+
+PLU:Al rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneAgricole ;
+      rdfs:label "Al"@fr ;
+      skos:altLabel "secteur al"@fr ,
+                    "zone al"@fr .
+
+
+PLU:ArtisanatEtCommerceDeDetail rdf:type owl:Class ;
+                               rdfs:subClassOf PLU:CommerceEtActiviteDeService ;
+                               rdfs:label "Artisanat et commerce de détail"@fr .
+
+
+PLU:AutresActivitesSecteurPrimaireSecondaireTertiaire rdf:type owl:Class ;
+                                                     rdfs:subClassOf PLU:Destination ;
+                                                     rdfs:label "Autres activités des secteurs primaire, secondaire ou tertiaire"@fr ;
+                                                     skos:altLabel "Autres activités des secteurs primaire, secondaire ou tertiaire"@fr .
+
+
+PLU:AutresEquipementsRecevantDuPublic rdf:type owl:Class ;
+                                     rdfs:subClassOf PLU:EquipementDinteretCollectifEtServicePublic ;
+                                     rdfs:label "Autres équipements recevant du public"@fr .
+
+PLU:AutresHebergementsTouristiques rdf:type owl:Class ;
+                                  rdfs:subClassOf PLU:CommerceEtActiviteDeService ;
+                                  rdfs:label "Autres hébergements touristiques"@fr .
+
+
+PLU:Ay rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneAgricole ;
+      rdfs:label "Ay"@fr ;
+      skos:altLabel "secteur ay"@fr ,
+                    "zone ay"@fr .
+
+
+PLU:Bureau rdf:type owl:Class ;
+          rdfs:subClassOf PLU:AutresActivitesSecteurPrimaireSecondaireTertiaire ;
+          rdfs:label "Bureau"@fr .
+
+
+PLU:CentreDeCongressEtExposition rdf:type owl:Class ;
+                                rdfs:subClassOf PLU:AutresActivitesSecteurPrimaireSecondaireTertiaire ;
+                                rdfs:label "Centre de congrès et d'exposition"@fr .
+
+
+PLU:Cinema rdf:type owl:Class ;
+          rdfs:subClassOf PLU:CommerceEtActiviteDeService ;
+          rdfs:label "Cinéma"@fr .
+
+
+PLU:CommerceDeGros rdf:type owl:Class ;
+                  rdfs:subClassOf PLU:CommerceEtActiviteDeService ;
+                  rdfs:label "Commerce de gros"@fr .
+
+
+PLU:CommerceEtActiviteDeService rdf:type owl:Class ;
+                               rdfs:subClassOf PLU:Destination ;
+                               rdfs:label "Commerce et activités de service"@fr ;
+                               skos:altLabel "Commerce et activités"@fr .
+
+
+PLU:CuisineDedieeVenteEnLigne rdf:type owl:Class ;
+                             rdfs:subClassOf PLU:AutresActivitesSecteurPrimaireSecondaireTertiaire ;
+                             rdfs:label "Cuisine dédiée à la vente en ligne"@fr .
+
+
+PLU:Destination rdf:type owl:Class ;
+               rdfs:label "Destination"@fr .
+
+
+PLU:Entrepot rdf:type owl:Class ;
+            rdfs:subClassOf PLU:AutresActivitesSecteurPrimaireSecondaireTertiaire ;
+            rdfs:label "Entrepôt"@fr .
+
+
+PLU:EquipementDinteretCollectifEtServicePublic rdf:type owl:Class ;
+                                              rdfs:subClassOf PLU:Destination ;
+                                              rdfs:label "Équipements d'intérêt collectif et services publics"@fr .
+
+
+PLU:EquipementsSportifs rdf:type owl:Class ;
+                       rdfs:subClassOf PLU:EquipementDinteretCollectifEtServicePublic ;
+                       rdfs:label "Équipements sportifs"@fr .
+
+
+PLU:EtablissementsEnseignementSanteActionSociale rdf:type owl:Class ;
+                                                rdfs:subClassOf PLU:EquipementDinteretCollectifEtServicePublic ;
+                                                rdfs:label "Établissements d'enseignement, de santé et d'action sociale"@fr .
+
+
+PLU:ExploitationAgricole rdf:type owl:Class ;
+                        rdfs:subClassOf PLU:ExploitationAgricoleEtForestiere ;
+                        owl:disjointWith PLU:ExploitationForestiere ;
+                        rdfs:label "Exploitation agricole"@fr .
+
+PLU:ExploitationAgricoleEtForestiere rdf:type owl:Class ;
+                                    rdfs:subClassOf PLU:Destination ;
+                                    rdfs:label "Exploitation agricole et forestière"@fr .
+
+PLU:ExploitationForestiere rdf:type owl:Class ;
+                          rdfs:subClassOf PLU:ExploitationAgricoleEtForestiere ;
+                          rdfs:label "Exploitation forestière"@fr .
+
+
+PLU:Habitation rdf:type owl:Class ;
+              rdfs:subClassOf PLU:Destination ;
+              rdfs:label "Habitation"@fr .
+
+
+PLU:Hebergement rdf:type owl:Class ;
+               rdfs:subClassOf PLU:Habitation ;
+               owl:disjointWith PLU:Logement ;
+               rdfs:label "Hébergement"@fr .
+
+
+PLU:Hotels rdf:type owl:Class ;
+          rdfs:subClassOf PLU:CommerceEtActiviteDeService ;
+          rdfs:label "Hôtels"@fr .
+
+PLU:Industrie rdf:type owl:Class ;
+             rdfs:subClassOf PLU:AutresActivitesSecteurPrimaireSecondaireTertiaire ;
+             rdfs:label "Industrie"@fr .
+
+
+PLU:LieuDeCulte rdf:type owl:Class ;
+               rdfs:subClassOf PLU:EquipementDinteretCollectifEtServicePublic ;
+               rdfs:label "Lieu de culte"@fr .
+
+
+PLU:LocauxEtBureauxAdministrationsPubliques rdf:type owl:Class ;
+                                           rdfs:subClassOf PLU:EquipementDinteretCollectifEtServicePublic ;
+                                           rdfs:label "Locaux et bureaux accueillant du public des administrations publiques et assimilés"@fr .
+
+
+PLU:LocauxTechniquesEtIndustrielsDAdminPubliques rdf:type owl:Class ;
+                                                rdfs:subClassOf PLU:EquipementDinteretCollectifEtServicePublic ;
+                                                rdfs:label "Locaux techniques et industriels des administrations publiques et assimilés"@fr .
+
+
+PLU:Logement rdf:type owl:Class ;
+            rdfs:subClassOf PLU:Habitation ;
+            rdfs:label "Logement"@fr .
+
+
+PLU:Nc rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneNaturelle ;
+      rdfs:label "Nc"@fr ;
+      skos:altLabel "secteur nc"@fr ,
+                    "zone nc"@fr .
+
+PLU:Nci rdf:type owl:Class ;
+       rdfs:subClassOf PLU:ZoneNaturelle ;
+       rdfs:label "Nci"@fr ;
+       skos:altLabel "secteur nci"@fr ,
+                     "zone nci"@fr .
+
+PLU:Ne rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneNaturelle ;
+      rdfs:label "Ne"@fr ;
+      skos:altLabel "secteur ne"@fr ,
+                    "zone ne"@fr .
+
+
+PLU:Ness rdf:type owl:Class ;
+        rdfs:subClassOf PLU:ZoneNaturelle ;
+        rdfs:label "Ness"@fr ;
+        skos:altLabel "secteur ness"@fr ,
+                      "zone ness"@fr .
+
+PLU:Ng rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneNaturelle ;
+      rdfs:label "Ng"@fr ;
+      skos:altLabel "secteur ng"@fr ,
+                    "zone ng"@fr .
+
+
+PLU:Nh rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneNaturelle ;
+      rdfs:label "Nh"@fr ;
+      skos:altLabel "nh"@fr ,
+                    "secteur nh"@fr ,
+                    "zone nh"@fr .
+
+
+PLU:Ni rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneNaturelle ;
+      rdfs:label "Ni"@fr ;
+      skos:altLabel "secteur ni"@fr ,
+                    "zone ni"@fr .
+
+
+PLU:Nl rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneNaturelle ;
+      rdfs:label "Nl"@fr ;
+      skos:altLabel "secteur nl"@fr ,
+                    "zone nl"@fr .
+
+PLU:Ny rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneNaturelle ;
+      rdfs:label "Ny"@fr ;
+      skos:altLabel "secteur ny"@fr ,
+                    "zone ny"@fr .
+
+
+PLU:PermisDeConstruire rdf:type owl:Class ;
+                      rdfs:label "Permis de Construire"@fr .
+
+
+             
+PLU:Reglement rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:label "Règlement"@fr .    
+
+PLU:Restauration rdf:type owl:Class ;
+                rdfs:subClassOf PLU:CommerceEtActiviteDeService ;
+                rdfs:label "Restauration"@fr .
+
+PLU:SallesArtEtSpectacles rdf:type owl:Class ;
+                         rdfs:subClassOf PLU:EquipementDinteretCollectifEtServicePublic ;
+                         rdfs:label "Salles d'art et de spectacles"@fr .
+
+
+PLU:StatutConformite rdf:type owl:Class ;
+                    rdfs:label "Statut de Conformité"@fr .
+
+
+
+PLU:UA rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneUrbaineMixte ;
+      rdfs:label "UA"@fr ;
+      skos:altLabel "secteur ua"@fr ,
+                    "zone ua"@fr .
+
+PLU:UA1 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UA ;
+       owl:disjointWith PLU:UA2 ;
+       rdfs:label "UA1"@fr ;
+       skos:altLabel "secteur ua1"@fr ,
+                     "zone ua1"@fr .
+
+
+PLU:UA1a rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UA1 ;
+        rdfs:label "UA1a"@fr ;
+        skos:altLabel "secteur ua1a"@fr ,
+                      "ua1a"@fr ,
+                      "zone ua1a"@fr .
+
+
+PLU:UA1b rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UA1 ;
+        rdfs:label "UA1b"@fr ;
+        skos:altLabel "secteur ua1b"@fr ,
+                      "zone ua1b"@fr .
+
+
+PLU:UA1c rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UA1 ;
+        rdfs:label "UA1c"@fr ;
+        skos:altLabel "secteur ua1c"@fr ,
+                      "zone ua1c"@fr .
+
+
+PLU:UA1h rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UA1 ;
+        rdfs:label "UA1h"@fr ;
+        skos:altLabel "secteur ua1h"@fr ,
+                      "zone ua1h"@fr .
+
+
+PLU:UA2 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UA ;
+       rdfs:label "UA2"@fr ;
+       skos:altLabel "secteur ua2"@fr ,
+                     "zone ua2"@fr .
+
+PLU:UB rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneUrbaineMixte ;
+      rdfs:label "UB"@fr ;
+      skos:altLabel "secteur ub"@fr ,
+                    "zone ub"@fr .
+
+
+PLU:UB1 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UB ;
+       owl:disjointWith PLU:UB2 ;
+       rdfs:label "UB1"@fr ;
+       skos:altLabel "secteur ub1"@fr ,
+                     "zone ub1"@fr .
+
+
+PLU:UB1a rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UB1 ;
+        rdfs:label "UB1a"@fr ;
+        skos:altLabel "secteur ub1a"@fr ,
+                      "zone ub1a"@fr .
+
+PLU:UB1b rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UB1 ;
+        rdfs:label "UB1b"@fr ;
+        skos:altLabel "secteur ub1b"@fr ,
+                      "zone ub1b"@fr .
+
+PLU:UB1h rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UB1 ;
+        rdfs:label "UB1h"@fr ;
+        skos:altLabel "secteur ub1h"@fr ,
+                      "zone ub1h"@fr .
+
+PLU:UB2 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UB ;
+       rdfs:label "UB2"@fr ;
+       skos:altLabel "secteur ub2"@fr ,
+                     "zone ub2"@fr .
+
+PLU:UB2a rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UB2 ;
+        owl:disjointWith PLU:UB2b ;
+        rdfs:label "UB2a"@fr ;
+        skos:altLabel "secteur ub2a"@fr ,
+                      "zone ub2a"@fr .
+
+PLU:UB2b rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UB2 ;
+        rdfs:label "UB2b"@fr ;
+        skos:altLabel "secteur ub2b"@fr ,
+                      "zone ub2b"@fr .
+
+PLU:UC rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneUrbaineMixte ;
+      rdfs:label "UC"@fr ;
+      skos:altLabel "secteur uc"@fr ,
+                    "zone uc"@fr .
+
+
+PLU:UC1 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UC ;
+       owl:disjointWith PLU:UC2 ;
+       rdfs:label "UC1"@fr ;
+       skos:altLabel "secteur uc1"@fr ,
+                     "zone uc1"@fr .
+
+
+PLU:UC1a rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UC1 ;
+        rdfs:label "UC1a"@fr ;
+        skos:altLabel "secteur uc1a"@fr ,
+                      "zone uc1a"@fr .
+
+
+PLU:UC1b rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UC1 ;
+        rdfs:label "UC1b"@fr ;
+        skos:altLabel "secteur uc1b"@fr ,
+                      "zone uc1b"@fr .
+
+
+PLU:UC1h rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UC1 ;
+        rdfs:label "UC1h"@fr ;
+        skos:altLabel "secteur uc1h"@fr ,
+                      "zone uc1h"@fr .
+
+
+PLU:UC2 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UC ;
+       rdfs:label "UC2"@fr ;
+       skos:altLabel "secteur uc2"@fr ,
+                     "zone uc2"@fr .
+
+PLU:UD rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneUrbaineMixte ;
+      rdfs:label "UD"@fr ;
+      skos:altLabel "secteur ud"@fr ,
+                    "zone ud"@fr .
+
+
+PLU:UD1 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UD ;
+       owl:disjointWith PLU:UD2 ;
+       rdfs:label "UD1"@fr ;
+       skos:altLabel "secteur ud1"@fr ,
+                     "ud1"@fr ,
+                     "zone ud1"@fr .
+
+PLU:UD1a rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UD1 ;
+        owl:disjointWith PLU:UD1h ;
+        rdfs:label "UD1a"@fr ;
+        skos:altLabel "secteur ud1a"@fr ,
+                      "zone ud1a"@fr .
+
+PLU:UD1h rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UD1 ;
+        rdfs:label "UD1h"@fr ;
+        skos:altLabel "secteur ud1h"@fr ,
+                      "zone ud1h"@fr .
+
+PLU:UD2 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UD ;
+       rdfs:label "UD2"@fr ;
+       skos:altLabel "secteur ud2"@fr ,
+                     "ud2"@fr ,
+                     "zone ud2"@fr .
+
+PLU:UD2a rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UD2 ;
+        rdfs:label "UD2a"@fr ;
+        skos:altLabel "secteur ud2a"@fr ,
+                      "zone ud2a"@fr .
+
+PLU:UD2b rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UD2 ;
+        rdfs:label "UD2b"@fr ;
+        skos:altLabel "secteur ud2b"@fr ,
+                      "zone ud2b"@fr .
+
+PLU:UD2c rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UD2 ;
+        rdfs:label "UD2c"@fr ;
+        skos:altLabel "secteur ud2c"@fr ,
+                      "zone ud2c"@fr .
+
+PLU:UD2d rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UD2 ;
+        rdfs:label "UD2d"@fr ;
+        skos:altLabel "secteur ud2d"@fr ,
+                      "zone ud2d"@fr .
+
+PLU:UD2h rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UD2 ;
+        rdfs:label "UD2h"@fr ;
+        skos:altLabel "secteur ud2h"@fr ,
+                      "zone ud2h"@fr .
+
+PLU:UE rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneUrbaineMixte ;
+      rdfs:label "UE"@fr ;
+      skos:altLabel "secteur ue"@fr ,
+                    "zone ue"@fr .
+
+PLU:UE1 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UE ;
+       rdfs:label "UE1"@fr ;
+       skos:altLabel "secteur ue1"@fr ,
+                     "zone ue1"@fr .
+
+
+PLU:UE1a rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UE1 ;
+        rdfs:label "UE1a"@fr ;
+        skos:altLabel "secteur ue1a"@fr ,
+                      "zone ue1a"@fr .
+
+PLU:UE1b rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UE1 ;
+        rdfs:label "UE1b"@fr ;
+        skos:altLabel "secteur ue1b"@fr ,
+                      "zone ue1b"@fr .
+
+PLU:UE1h rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UE1 ;
+        rdfs:label "UE1h"@fr ;
+        skos:altLabel "secteur ue1h"@fr ,
+                      "zone ue1h"@fr .
+
+PLU:UE2 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UE ;
+       rdfs:label "UE2"@fr ;
+       skos:altLabel "secteur ue2"@fr ,
+                     "zone ue2"@fr .
+
+
+PLU:UE2a rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UE2 ;
+        rdfs:label "UE2a"@fr ;
+        skos:altLabel "secteur ue2a"@fr ,
+                      "zone ue2a"@fr .
+PLU:UE2b rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UE2 ;
+        rdfs:label "UE2b"@fr ;
+        skos:altLabel "secteur ue2b"@fr ,
+                      "zone ue2b"@fr .
+
+PLU:UE2c rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UE2 ;
+        rdfs:label "UE2c"@fr ;
+        skos:altLabel "secteur ue2c"@fr ,
+                      "zone ue2c"@fr .
+
+PLU:UE2d rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UE2 ;
+        rdfs:label "UE2d"@fr ;
+        skos:altLabel "secteur ue2d"@fr ,
+                      "zone ue2d"@fr .
+
+PLU:UE2e rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UE2 ;
+        rdfs:label "UE2e"@fr ;
+        skos:altLabel "secteur ue2e"@fr ,
+                      "zone ue2e"@fr .
+
+PLU:UE2h rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UE2 ;
+        rdfs:label "UE2h"@fr ;
+        skos:altLabel "secteur ue2h"@fr ,
+                      "zone ue2h"@fr .
+
+
+PLU:UE3 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UE ;
+       rdfs:label "UE3"@fr ;
+       skos:altLabel "secteur ue3"@fr ,
+                     "zone ue3"@fr .
+
+PLU:UE4 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UE ;
+       rdfs:label "UE4"@fr ;
+       skos:altLabel "secteur ue4"@fr ,
+                     "zone ue4"@fr .
+
+PLU:UG rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneAffectationSpecifique ;
+      owl:disjointWith PLU:UI ;
+      rdfs:label "UG"@fr ;
+      skos:altLabel "secteur ug"@fr ,
+                    "zone ug"@fr .
+
+PLU:UG1 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UG ;
+       rdfs:label "UG1"@fr ;
+       skos:altLabel "secteur ug1"@fr ,
+                     "zone ug1"@fr .
+
+PLU:UG1a rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UG1 ;
+        rdfs:label "UG1a"@fr ;
+        skos:altLabel "secteur ug1a"@fr ,
+                      "zone ug1a"@fr .
+
+PLU:UG1b rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UG1 ;
+        rdfs:label "UG1b"@fr ;
+        skos:altLabel "secteur ug1b"@fr ,
+                      "zone ug1b"@fr .
+
+PLU:UG1h rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UG1 ;
+        rdfs:label "UG1h"@fr ;
+        skos:altLabel "secteur ug1h"@fr ,
+                      "zone ug1h"@fr .
+
+PLU:UG2 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UG ;
+       rdfs:label "UG2"@fr ;
+       skos:altLabel "secteur ug2"@fr ,
+                     "zone ug2"@fr .
+
+PLU:UG2a rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UG2 ;
+        rdfs:label "UG2a"@fr ;
+        skos:altLabel "secteur ug2a"@fr ,
+                      "zone ug2a"@fr .
+
+PLU:UG2b rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UG2 ;
+        rdfs:label "UG2b"@fr ;
+        skos:altLabel "secteur ug2b"@fr ,
+                      "zone ug2b"@fr .
+
+PLU:UG2h rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UG2 ;
+        rdfs:label "UG2h"@fr ;
+        skos:altLabel "secteur ug2h"@fr ,
+                      "zone ug2h"@fr .
+
+PLU:UG3 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UG ;
+       rdfs:label "UG3"@fr ;
+       skos:altLabel "secteur ug3"@fr ,
+                     "zone ug3"@fr .
+
+PLU:UG4 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UG ;
+       rdfs:label "UG4"@fr ;
+       skos:altLabel "secteur ug4"@fr ,
+                     "zone ug4"@fr .
+
+PLU:UGf rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UG ;
+       rdfs:label "UGf"@fr ;
+       skos:altLabel "secteur ugf"@fr ,
+                     "zone ugf"@fr .
+
+PLU:UGl rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UG ;
+       rdfs:label "UGl"@fr ;
+       skos:altLabel "secteur ugl"@fr ,
+                     "zone ugl"@fr .
+
+PLU:UGn rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UG ;
+       rdfs:label "UGn"@fr ;
+       skos:altLabel "secteur ugn"@fr ,
+                     "zone ugn"@fr .
+
+PLU:UI rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneAffectationSpecifique ;
+      rdfs:label "UI"@fr ;
+      skos:altLabel "secteur ui"@fr ,
+                    "zone ui"@fr .
+
+PLU:UI1 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UI ;
+       rdfs:label "UI1"@fr ;
+       skos:altLabel "secteur ui1"@fr ,
+                     "zone ui1"@fr .
+
+PLU:UI1a rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UI1 ;
+        rdfs:label "UI1a"@fr ;
+        skos:altLabel "secteur ui1a"@fr ,
+                      "zone ui1a"@fr .
+
+PLU:UI1b rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UI1 ;
+        rdfs:label "UI1b"@fr ;
+        skos:altLabel "secteur ui1b"@fr ,
+                      "zone ui1b"@fr .
+
+PLU:UI1c rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UI1 ;
+        rdfs:label "UI1c"@fr ;
+        skos:altLabel "secteur ui1c"@fr ,
+                      "zone ui1c"@fr .
+
+PLU:UI1d rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UI1 ;
+        rdfs:label "UI1d"@fr ;
+        skos:altLabel "secteur ui1d"@fr ,
+                      "zone ui1d"@fr .
+
+PLU:UI1e rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UI1 ;
+        rdfs:label "UI1e"@fr ;
+        skos:altLabel "secteur ui1e"@fr ,
+                      "zone ui1e"@fr .
+
+PLU:UI1f rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UI1 ;
+        rdfs:label "UI1f"@fr ;
+        skos:altLabel "secteur ui1f"@fr ,
+                      "zone ui1f"@fr .
+
+PLU:UI1g rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UI1 ;
+        rdfs:label "UI1g"@fr ;
+        skos:altLabel "secteur ui1g"@fr ,
+                      "zone ui1g"@fr .
+
+
+PLU:UI1i rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UI1 ;
+        rdfs:label "UI1i"@fr ;
+        skos:altLabel "secteur ui1i"@fr ,
+                      "zone ui1i"@fr .
+
+PLU:UI1j rdf:type owl:Class ;
+        rdfs:subClassOf PLU:UI1 ;
+        rdfs:label "UI1j"@fr ;
+        skos:altLabel "secteur ui1j"@fr ,
+                      "zone ui1j"@fr .
+
+PLU:UI2 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UI ;
+       rdfs:label "UI2"@fr ;
+       skos:altLabel "secteur ui2"@fr ,
+                     "zone ui2"@fr .
+
+PLU:UI3 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UI ;
+       rdfs:label "UI3"@fr ;
+       skos:altLabel "secteur ui3"@fr ,
+                     "zone ui3"@fr .
+
+PLU:UI4 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UI ;
+       rdfs:label "UI4"@fr ;
+       skos:altLabel "secteur ui4"@fr ,
+                     "zone ui4"@fr .
+
+PLU:UI5 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UI ;
+       rdfs:label "UI5"@fr ;
+       skos:altLabel "secteur ui5"@fr ,
+                     "zone ui5"@fr .
+
+PLU:UO rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneUrbaineMixte ;
+      rdfs:label "UO"@fr ;
+      skos:altLabel "secteur uo"@fr ,
+                    "zone uo"@fr .
+
+PLU:UO1 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UO ;
+       rdfs:label "UO1"@fr ;
+       skos:altLabel "secteur uo1"@fr ,
+                     "zone uo1"@fr .
+
+PLU:UO2 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UO ;
+       rdfs:label "UO2"@fr ;
+       skos:altLabel "secteur uo2"@fr ,
+                     "zone uo2"@fr .
+
+PLU:UO3 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UO ;
+       rdfs:label "UO3"@fr ;
+       skos:altLabel "secteur uo3"@fr ,
+                     "zone uo3"@fr .
+
+PLU:UO4 rdf:type owl:Class ;
+       rdfs:subClassOf PLU:UO ;
+       rdfs:label "UO4"@fr ;
+       skos:altLabel "secteur uo4"@fr ,
+                     "zone uo4"@fr .
+
+
+PLU:UP rdf:type owl:Class ;
+      rdfs:subClassOf PLU:ZoneUrbaineMixte ;
+      rdfs:label "UP"@fr ;
+      skos:altLabel "secteur up"@fr ,
+                    "zone up"@fr .
+
+PLU:Zone rdf:type owl:Class ;
+        rdfs:label "Zone"@fr .
+
+PLU:ZoneAffectationSpecifique rdf:type owl:Class ;
+                             rdfs:subClassOf PLU:ZoneUrbaine ;
+                             owl:disjointWith PLU:ZoneUrbaineMixte ;
+                             rdfs:label "Zone à Affectation Spécifique"@fr ;
+                             skos:altLabel "zone affectation specifique"@fr .
+
+PLU:ZoneAgricole rdf:type owl:Class ;
+                rdfs:subClassOf PLU:Zone ;
+                rdfs:label "Zone A"@fr ;
+                skos:altLabel "a"@fr ,
+                              "secteur a"@fr ,
+                              "zone a"@fr .
+
+
+PLU:ZoneNaturelle rdf:type owl:Class ;
+                 rdfs:subClassOf PLU:Zone ;
+                 rdfs:label "Zone N"@fr ;
+                 skos:altLabel "n"@fr ,
+                               "secteur n"@fr .
+
+PLU:ZoneNaturelleProtegee rdf:type owl:Class ;
+                         rdfs:subClassOf PLU:ZoneNaturelle ;
+                         rdfs:label "Zone NP"@fr ;
+                         skos:altLabel "np"@fr ,
+                                       "secteur np"@fr .
+
+PLU:ZoneUrbaine rdf:type owl:Class ;
+               rdfs:subClassOf PLU:Zone ;
+               rdfs:label "Zone U"@fr ;
+               skos:altLabel "secteur u"@fr .
+
+
+PLU:ZoneUrbaineMixte rdf:type owl:Class ;
+                    rdfs:subClassOf PLU:ZoneUrbaine ;
+                    rdfs:label "Zone Urbaine Mixte"@fr ;
+                    skos:altLabel "zone urbaine mixte"@fr .
+
+
+PLU:ZoneUrbanisation rdf:type owl:Class ;
+                    rdfs:subClassOf PLU:Zone ;
+                    rdfs:label "Zone AU"@fr ;
+                    skos:altLabel "AU"@fr ,
+                                  "secteur au"@fr ,
+                                  "zone à urbaniser"@fr .
+
+PLU:ZonesHebergementExclusif rdf:type owl:Class ;
+                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                  owl:onProperty PLU:destineeA ;
+                                                  owl:allValuesFrom PLU:Hebergement
+                                                ] .
+
+
+
+PLU:Conforme rdf:type owl:NamedIndividual ,
+                     PLU:StatutConformite ;
+            rdfs:comment "Le permis de construire est conforme au règlement de la zone."@fr ;
+            rdfs:label "Conforme"@fr .
+
+
+PLU:NonConforme rdf:type owl:NamedIndividual ,
+                        PLU:StatutConformite ;
+               rdfs:comment "Le permis de construire est non conforme par rapport au règlement du PLUi."@fr ;
+               rdfs:label "Non conforme"@fr .
+
+
+PLU:maparcelle rdf:type owl:NamedIndividual ,
+                       PLU:Aa ;
+              PLU:destineeA PLU:monlogement .
+
+
+PLU:monlogement rdf:type owl:NamedIndividual ,
+                        PLU:Logement .
+
+PLU:monpermis rdf:type owl:NamedIndividual ,
+                      PLU:PermisDeConstruire ;
+             PLU:pourdestinations PLU:monlogement ;
+             PLU:pourlieux PLU:maparcelle .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:Aa
+                PLU:Aen
+                PLU:Ag
+                PLU:Ah
+                PLU:Ai
+                PLU:Al
+                PLU:Ay
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:ActiviteDeServiceAvecAccueilClientele
+                PLU:ArtisanatEtCommerceDeDetail
+                PLU:AutresHebergementsTouristiques
+                PLU:Cinema
+                PLU:CommerceDeGros
+                PLU:Hotels
+                PLU:Restauration
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:AutresActivitesSecteurPrimaireSecondaireTertiaire
+                PLU:CommerceEtActiviteDeService
+                PLU:EquipementDinteretCollectifEtServicePublic
+                PLU:ExploitationAgricoleEtForestiere
+                PLU:Habitation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:AutresEquipementsRecevantDuPublic
+                PLU:EquipementsSportifs
+                PLU:EtablissementsEnseignementSanteActionSociale
+                PLU:LieuDeCulte
+                PLU:LocauxEtBureauxAdministrationsPubliques
+                PLU:LocauxTechniquesEtIndustrielsDAdminPubliques
+                PLU:SallesArtEtSpectacles
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:Bureau
+                PLU:CentreDeCongressEtExposition
+                PLU:CuisineDedieeVenteEnLigne
+                PLU:Entrepot
+                PLU:Industrie
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:Nc
+                PLU:Nci
+                PLU:Ne
+                PLU:Ness
+                PLU:Ng
+                PLU:Nh
+                PLU:Ni
+                PLU:Nl
+                PLU:Ny
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UA
+                PLU:UB
+                PLU:UC
+                PLU:UD
+                PLU:UE
+                PLU:UO
+                PLU:UP
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UA1a
+                PLU:UA1b
+                PLU:UA1c
+                PLU:UA1h
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UB1a
+                PLU:UB1b
+                PLU:UB1h
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UC1a
+                PLU:UC1b
+                PLU:UC1h
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UD2a
+                PLU:UD2b
+                PLU:UD2c
+                PLU:UD2d
+                PLU:UD2h
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UE1
+                PLU:UE2
+                PLU:UE3
+                PLU:UE4
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UE1a
+                PLU:UE1b
+                PLU:UE1h
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UE2a
+                PLU:UE2b
+                PLU:UE2c
+                PLU:UE2d
+                PLU:UE2e
+                PLU:UE2h
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UG1
+                PLU:UG2
+                PLU:UG3
+                PLU:UG4
+                PLU:UGf
+                PLU:UGl
+                PLU:UGn
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UG1a
+                PLU:UG1b
+                PLU:UG1h
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UG2a
+                PLU:UG2b
+                PLU:UG2h
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UI1
+                PLU:UI2
+                PLU:UI3
+                PLU:UI4
+                PLU:UI5
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UI1a
+                PLU:UI1b
+                PLU:UI1c
+                PLU:UI1d
+                PLU:UI1e
+                PLU:UI1f
+                PLU:UI1g
+                PLU:UI1i
+                PLU:UI1j
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:UO1
+                PLU:UO2
+                PLU:UO3
+                PLU:UO4
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( PLU:ZoneAgricole
+                PLU:ZoneNaturelle
+                PLU:ZoneUrbaine
+                PLU:ZoneUrbanisation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( PLU:aStatutDeConformite
+                PLU:destineeA
+                PLU:estStatutDe
+                PLU:pourdestinations
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( PLU:aStatutDeConformite
+                PLU:destineeA
+                PLU:estStatutDe
+                PLU:pourdestinations
+                PLU:pourlieux
+              )
+] .
